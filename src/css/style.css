@@ -1,0 +1,313 @@
+* {
+  font-family: Pokemon;
+  letter-spacing: 3px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: Pokemon;
+  src: url("./font/PokemonSolid.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.App {
+  padding-top: 80px;
+  background-image: url("../image/pattern.svg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: repeat;
+  min-height: 100vh;
+}
+
+.navbar-custom {
+  background-color: #ff3939;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+.navbar-custom img {
+  margin-right: 10px;
+}
+
+.navbar-light .navbar-brand {
+  color: #ffffff !important;
+}
+
+.btn-costum {
+  margin-bottom: 20px;
+  width: 300px;
+  background-color: #2b4d88 !important;
+  color: #F8C505 !important;
+  text-shadow: 1px 1px 3px  #558ABB;
+}
+
+.btn-costum:hover {
+  background-color: #1f3761 !important;
+  color: #FF3939 !important;
+}
+
+.single-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.card-costum {
+  background-image: url(../image/bgCard.png);
+  background-position: center;
+  background-repeat: repeat;
+  width: 250px;
+}
+
+.card-costum:hover {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.card-costum:hover .blob {
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-animation: pulse 1s infinite;
+          animation: pulse 1s infinite;
+}
+
+.pokedex {
+  margin-bottom: 20px;
+}
+
+.topBottomCard {
+  background-color: #5694DC !important;
+}
+
+.poceball-card {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  margin-top: -2px;
+  left: 0;
+  margin-left: 44%;
+}
+
+.blob {
+  -webkit-box-shadow: 2px 3px 10px 1px rgba(0, 0, 0, 0.75);
+          box-shadow: 2px 3px 10px 1px rgba(0, 0, 0, 0.75);
+  -webkit-transition: all 0.3s cubic-bezier(0.3, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.3, 1, 0.3, 1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  border-radius: 50%;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  70% {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  70% {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.btn-load {
+  margin-top: 50px;
+}
+
+.card-img-costum, .card-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.badge-costum {
+  height: 22px;
+}
+
+.card-pokemon {
+  height: 100%;
+}
+
+.card-pokemon span {
+  font-size: 20px !important;
+}
+
+.number {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-size: 0.8em;
+  padding: 0px 10px;
+}
+
+.card-title {
+  margin-top: 10px;
+}
+
+.characteristics {
+  width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.type {
+  margin-bottom: 10px;
+}
+
+.results {
+  margin-bottom: 10px;
+}
+
+.results {
+  width: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 10px;
+}
+
+.type-header {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.badge-costum-pokemon {
+  height: 34px;
+}
+
+.img-container {
+  background-color: rgba(214, 97, 97, 0.6);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+}
+
+.img-pokem {
+  height: 100%;
+  width: 100%;
+}
+
+.body-pokemon {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container-species {
+  margin: auto;
+}
+
+.name-pokemon {
+  font-size: 22px;
+}
+
+.number {
+  height: 30px;
+}
+
+.type-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.description {
+  margin-top: 20px;
+}
+/*# sourceMappingURL=style.css.map */
