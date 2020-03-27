@@ -64,7 +64,8 @@ export default class Pokemon extends Component {
     moves: [],
     themeColor: "",
     statTitleWidth: 3,
-    statBarWidth: 9
+    statBarWidth: 9,
+    imageLoading: true
   };
 
   async componentDidMount() {
@@ -212,9 +213,11 @@ export default class Pokemon extends Component {
 
           <div className="card-body mx-auto">
             <div className="image-container">
+              {this.state.imageLoading ? <h4>Loading...</h4> : null}
               <img
                 className="card-img-top rounded mx-auto mt-2 mb-3 img-pokem"
                 src={this.state.imageUrl}
+                onLoad={() => this.setState({ imageLoading: false })}
               />
             </div>
 
@@ -447,179 +450,4 @@ export default class Pokemon extends Component {
       </div>
     );
   }
-}
-
-{
-  /* 
-<div className="characteristics center">
-                <div className="type-element">
-                  <div className="type">
-                    <span className="">Type: </span>
-                    <div className="results">
-                      {this.state.types.map(type => (
-                        <span
-                          key={type}
-                          className="badge badge-pill mr-2 text-capitalize badge-costum-pokemon"
-                          style={{
-                            background: `#${colors_type[type]}`
-                          }}
-                        >
-                          {type}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className="type-element">
-                  <div className="type">Attack</div>
-                  <div className="results">
-                    <div className="progress">
-                      <div
-                        className="progress-bar"
-                        role="progressbar"
-                        style={{
-                          width: `${this.state.stats.attack}%`,
-                          backgroundColor: `#${this.state.themeColor}`
-                        }}
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        <small>{this.state.stats.attack}</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="type-element">
-                  <div className="type">Defense</div>
-                  <div className="results">
-                    <div className="progress">
-                      <div
-                        className="progress-bar "
-                        role="progressbar"
-                        style={{
-                          width: `${this.state.stats.defense}%`,
-                          backgroundColor: `#${this.state.themeColor}`
-                        }}
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        <small>{this.state.stats.defense}</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="type-element">
-                  <div className="type">HP</div>
-                  <div className="results">
-                    <div className="progress">
-                      <div
-                        className="progress-bar "
-                        role="progressbar"
-                        style={{
-                          width: `${this.state.stats.hp}%`,
-                          backgroundColor: `#${this.state.themeColor}`
-                        }}
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        <small>{this.state.stats.hp}</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="type-element">
-                  <div className="type">Sp Atk</div>
-                  <div className="results">
-                    <div className="progress">
-                      <div
-                        className="progress-bar "
-                        role="progressbar"
-                        style={{
-                          width: `${this.state.stats.specialAttack}%`,
-                          backgroundColor: `#${this.state.themeColor}`
-                        }}
-                        aria-valuenow={this.state.stats.specialAttack}
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        <small>{this.state.stats.specialAttack}</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="type-element">
-                  <div className="type">Sp Def</div>
-                  <div className="results">
-                    <div className="progress">
-                      <div
-                        className="progress-bar "
-                        role="progressbar"
-                        style={{
-                          width: `${this.state.stats.specialDefense}%`,
-                          backgroundColor: `#${this.state.themeColor}`
-                        }}
-                        aria-valuenow={this.state.stats.specialDefense}
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        <small>{this.state.stats.specialDefense}</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="type-element">
-                  <div className="type">Speed</div>
-                  <div className="results">
-                    <div className="progress">
-                      <div
-                        className="progress-bar"
-                        role="progressbar"
-                        style={{
-                          width: `${this.state.stats.speed}%`,
-                          backgroundColor: `#${this.state.themeColor}`
-                        }}
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >
-                        <small>{this.state.stats.speed}</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="type-element">
-                  <div className="type">Weight:</div>
-                  <div className="results">
-                    <h6 className="float-left">{this.state.weight} kg</h6>
-                  </div>
-                </div>
-                <div className="type-element">
-                  <div className="type">Total moves:</div>
-                  <div className="results">
-                    <h6 className="float-left">{this.state.moves.length} </h6>
-                  </div>
-                </div>
-                <div className="type-element">
-                  <div className="type">Abilities:</div>
-                  <div className="results">
-                    <h6 className="float-left">{this.state.abilities}</h6>
-                  </div>
-                </div>
-                <div className="type-element">
-                  <div className="type">EVs:</div>
-                  <div className="results">
-                    <h6 className="float-left">{this.state.evs}</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="results center">
-              <div className="col">
-                <p className="results">{this.state.description}</p>
-              </div>
-            </div> */
 }

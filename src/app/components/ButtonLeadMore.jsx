@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-export default function ButtonLeadMore({ gotoNextPage, gotoPrevPage }) {
+export default function ButtonLeadMore({ getMore }) {
   return (
     <div>
       <div
@@ -8,7 +8,11 @@ export default function ButtonLeadMore({ gotoNextPage, gotoPrevPage }) {
         role="group"
         aria-label=""
       >
-        <button type="button" className="btn btn-secondary btn-costum">
+        <button
+          type="button"
+          className="btn btn-secondary btn-costum"
+          onClick={getMore}
+        >
           Lead More
         </button>
       </div>

@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "./components/NavBar.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Board from "./components/Board.jsx";
-import PokemonCard from "./components/pokemon/PokemonCard.jsx";
-import ButtonLeadMore from "./components/ButtonLeadMore.jsx";
-import { HashRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Pokemon from "./components/pokemon/Pokemon";
+import { getMore, pokemonStore } from "./store";
 
 function App() {
+  let [pokemons, setPokemonStore] = useState(pokemonStore.pokemons);
+  const getMorePokemons = () => getMore(setPokemonStore);
   return (
     <Router>
       <div className="App">
@@ -26,10 +27,17 @@ function App() {
               </div>
             </div>
             <Switch>
-              {/* <Link to={{ pathname: "/pokemon" }} label="pokemon">
-                <Board />
-              </Link> */}
-              <Route exact path="/" component={Board} />
+              <Route
+                exact
+                path="/"
+                render={props => (
+                  <Board
+                    {...props}
+                    pokemons={pokemons}
+                    getMore={getMorePokemons}
+                  />
+                )}
+              />
               <Route exact path="/pokemon/:pokemonIndex" component={Pokemon} />
             </Switch>
             <div className="single-card"></div>

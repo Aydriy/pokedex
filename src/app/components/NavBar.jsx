@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ball2 from "../../sass/image/ball2.png";
+import Type from "./Type";
 
 class NavBar extends Component {
   render() {
@@ -20,6 +21,20 @@ class NavBar extends Component {
               border="0"
             />
           </a>
+          <div className="btn-group">
+            <button
+              type="button"
+              className="btn btn-danger dropdown-toggle mr-5"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              All Types
+            </button>
+            <div className="dropdown-menu dropdown-costum">
+              <Type />
+            </div>
+          </div>
         </nav>
       </div>
     );

@@ -6,14 +6,14 @@ export default class Board extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
-          <div className="col">
-            <PokemonList />
+        <div className="row ">
+          <div className="col ">
+            <PokemonList pokemons={this.props.pokemons} />
           </div>
         </div>
 
         <div className="d-flex justify-content-center btn-load">
-          <ButtonLeadMore />
+          <ButtonLeadMore getMore={this.props.getMore} />
         </div>
       </div>
     );

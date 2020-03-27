@@ -34,7 +34,7 @@ const colors_type = {
   dragon: "755EDF",
   electric: "FCBC17",
   fairy: "F4B1F4",
-  fighting: "823551D",
+  fighting: "BB2F27",
   fire: "E73B0C",
   flying: "A3B3F7",
   ghost: "6060B2",
@@ -46,7 +46,9 @@ const colors_type = {
   psychic: "ED4882",
   rock: "B9A156",
   steel: "B5B5C3",
-  water: "3295F6"
+  water: "3295F6",
+  shadow: "3F4171",
+  unknown: "3C3837"
 };
 
 export default class PokemonCard extends Component {
@@ -83,9 +85,10 @@ export default class PokemonCard extends Component {
       pokemonIndex: pokemonIndex
     });
   }
+
   render() {
     return (
-      <div className="col-3-sm col-4 mb-3">
+      <div className="col-md-4 mb-5 ml-auto ">
         <StyledLink to={`pokemon/${this.state.pokemonIndex}`}>
           <Card className="card mx-auto card-costum">
             <div className="card-header topBottomCard stage">
@@ -93,12 +96,15 @@ export default class PokemonCard extends Component {
               <img src={pokemon} alt="" className="poceball-card blob" />
             </div>
             <div className="card-body mx-auto">
+              {this.state.imageLoading ? <h4>Loading...</h4> : null}
+
               <ImagePokem
                 className="card-img-top rounded mx-auto mt-2 mb-3 card-img-costum"
                 src={this.state.imageUrl}
                 onLoad={() => this.setState({ imageLoading: false })}
                 onError={() => this.setState({ toManyRequests: true })}
               />
+
               <h6 className="card-title text-capitalize">{this.state.name}</h6>
               <div className="center">
                 {this.state.types.map(type => (
